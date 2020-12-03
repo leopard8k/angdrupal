@@ -3,3 +3,4 @@
 ## Here is my empty table!
 |Col1|Col2|
 |--|--|
+|||
