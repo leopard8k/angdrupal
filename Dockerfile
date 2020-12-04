@@ -1,4 +1,4 @@
-from node:10
+from node:lts
 expose 4200
 run apt-get update &&\
   apt-get install -y net-tools &&\
