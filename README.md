@@ -1,4 +1,4 @@
-# Code reposiroty for learning Angular via Udemy course
+# Code reposiroty for trying out Angular + headless drupal
 
 ## Here is my empty table! [see my table](#my-table)
 
