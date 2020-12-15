@@ -19,17 +19,34 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /var/www/html/modules
-      - /var/www/html/profiles
-      - /var/www/html/themes
+      - modules:/var/www/html/modules
+      - profiles:/var/www/html/profiles
+      - themes:/var/www/html/themes
       # this takes advantage of the feature in Docker that a new anonymous
       # volume (which is what we're creating here) will be initialized with the
       # existing content of the image at the same location
-      - /var/www/html/sites
+      - sites:/var/www/html/sites
     restart: always
 
   postgres:
     image: postgres:10
     environment:
       POSTGRES_PASSWORD: example
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
     restart: always
+
+  vols:
+    image: kaveh8000/pub:angdrup2
+    volumes:
+      - postgres-data:/0_postgres-data
+      - modules:/0_modules
+      - profiles:/0_profiles
+      - themes:/0_themes
+      - sites:/0_sites
+volumes:
+  modules:
+  profiles:
+  themes:
+  sites:
+  postgres-data:
